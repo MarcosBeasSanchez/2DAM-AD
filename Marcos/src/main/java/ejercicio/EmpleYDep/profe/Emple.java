@@ -52,6 +52,10 @@ public class Emple {
 		return "Emple [dni=" + dni + ", nombre=" + nombre + ", sexo=" + (mujer?"Mujer":"Hombre") + ", fechaNacimiento=" + fechaNacimiento
 				+ ", fechaIncorporacion=" + fechaIncorporacion + ", salario=" + salario + ", comision=" + comision
 				+ ", cargo=" + cargo + ", jefe=" + jefe.map(Emple::getNombre).orElse("sin jefe") + "]";
+		
+		
 	}
 	
+	
+	 
 }
