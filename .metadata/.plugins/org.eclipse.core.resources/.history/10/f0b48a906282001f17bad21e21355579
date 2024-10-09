@@ -1,0 +1,18 @@
+package ejercicio.EmpleYDep;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		List<Departamento>departamentos;
+		List<Empleado>empleados;
+		
+		Empleado jefe = new Empleado();
+		
+		empleados.add("001","Marcos","masculino",LocalDate.of(2000, 12, 18),LocalDate.now(),2000,5,"programador",)
+
+	}
+
+}

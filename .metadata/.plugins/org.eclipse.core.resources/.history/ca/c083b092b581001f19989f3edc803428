@@ -1,0 +1,10 @@
+package ejercicio.subasta;
+
+public class Puja {
+	
+	private Usuario pujador;
+	private float cantidad;
+	private Objeto objeto;
+	
+
+}

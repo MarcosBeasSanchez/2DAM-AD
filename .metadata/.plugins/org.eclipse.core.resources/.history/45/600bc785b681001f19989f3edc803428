@@ -1,0 +1,14 @@
+package ejercicio.subasta;
+
+public class Objeto {
+	
+	private String nombre;
+	
+	public Objeto() {
+		this.nombre = "";
+	}
+	
+	public Objeto(String nombre) {
+		this.nombre = nombre;
+	}
+}

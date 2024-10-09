@@ -1,0 +1,10 @@
+package ejercicio.EmpleYDep;
+
+public class Departamento {
+	
+	private String codigo;
+	private String nombreDepartamento;
+	private String ciudad;
+	private List<Empleado>empleados;
+
+}

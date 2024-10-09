@@ -1,0 +1,12 @@
+package ejercicio.subasta;
+
+
+public class Usuario {
+	@Data
+	private String nombre;
+	private float credito;
+	
+	
+	
+
+}

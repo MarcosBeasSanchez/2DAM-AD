@@ -1,0 +1,5 @@
+@Data importa todas las librerias de Lombok , crea todos los getters setters etc
+
+La clase optional nos permite evitar los nullPointerException
+
+Streams-transformacion-consumidor(fuente de datos)

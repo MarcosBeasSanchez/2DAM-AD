@@ -1,0 +1,19 @@
+package ejercicio.subasta;
+
+import lombok.Data;
+
+public class Puja {
+	@Data
+	private Usuario pujador;
+	private float cantidad;
+	private Objeto objeto;
+	
+	public Puja() {
+		this(new Usuario(),0,new Objeto());
+	}
+	public Puja (Usuario puj,float cantidad,Objeto obj) {
+		this.pujador = puj;
+		this.cantidad= cantidad;
+		this.objeto = obj;
+	}
+}

@@ -1,0 +1,23 @@
+package ejercicio.subasta;
+
+import lombok.Data;
+
+@Data
+public class Usuario {
+	
+	private String nombre;
+	private float credito;
+	
+	public Usuario(String nombre,float credito) {
+		this(nombre,credito);
+	}
+	
+	public Usuario(String nombre) {
+		this(nombre,50);
+	}
+	public Usuario() {
+		this("",0);
+	}
+	
+
+}

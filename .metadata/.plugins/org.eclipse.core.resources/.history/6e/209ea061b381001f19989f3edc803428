@@ -1,0 +1,16 @@
+package ejercicio.subasta;
+
+import lombok.Data;
+
+@Data
+public class Usuario {
+	
+	private String nombre;
+	private float credito;
+	
+	public Usuario {
+		
+	}
+	
+
+}

@@ -1,0 +1,23 @@
+package ejercicio.EmpleYDep;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Optional;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+@Data
+@AllArgsConstructor
+public class Empleado {
+	
+	private String dni;
+	private String nombre;
+	private String sexo;
+	private Date fechaNacimiento;
+	private Date fechaIncorporacion;
+	private float salario;
+	private int comision;
+	private String cargo;
+	private Optional<Empleado> jefeEmpleado;
+
+}

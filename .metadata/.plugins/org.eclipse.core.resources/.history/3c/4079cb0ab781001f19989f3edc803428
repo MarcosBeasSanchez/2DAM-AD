@@ -1,0 +1,17 @@
+package ejercicio.subasta;
+
+import lombok.Data;
+
+@Data
+public class Subasta {
+	
+	private String nombre;
+	
+	public Subasta() {
+		this.nombre = "";
+	}
+	
+	public Subasta(String nombre) {
+		this.nombre = nombre;
+	}
+}

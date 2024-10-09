@@ -1,0 +1,13 @@
+package ejercicio.EmpleYDep;
+
+import java.util.List;
+
+@Data
+public class Departamento {
+	
+	private String codigo;
+	private String nombreDepartamento;
+	private String ciudad;
+	private List<Empleado>empleados;
+
+}

@@ -1,0 +1,8 @@
+package ejercicio.subasta;
+
+public class Usuario {
+	
+	private  String nombre;
+	
+
+}

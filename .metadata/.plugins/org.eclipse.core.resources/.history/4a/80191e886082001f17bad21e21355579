@@ -1,0 +1,14 @@
+package ejercicio.EmpleYDep;
+
+public class Empleado {
+	
+	private String dni;
+	private String nombre;
+	private String sexo;
+	private LocalDate fechaNacimiento;
+	private LocalDate fechaIncorporacion;
+	private float salario;
+	private int comision;
+	private String cargo;
+	private Optional<Empleado> jefeEmpleado;
+}

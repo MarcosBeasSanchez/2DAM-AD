@@ -1,0 +1,16 @@
+package ejercicio.subasta;
+
+public class Puja {
+	
+	private Usuario pujador;
+	private float cantidad;
+	private Objeto objeto;
+	
+	public Puja() {
+		this(new Usuario(),0,new Objeto());
+	}
+	public Puja (Usuario puj,float cantidad,Objeto obj) {
+		this(
+		
+	}
+}

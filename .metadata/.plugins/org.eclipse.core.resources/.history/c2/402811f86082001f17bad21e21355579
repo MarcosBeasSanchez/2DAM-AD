@@ -1,0 +1,15 @@
+package ejercicio.EmpleYDep;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class Departamento {
+	
+	private String codigo;
+	private String nombreDepartamento;
+	private String ciudad;
+	private List<Empleado>empleados;
+
+}
