@@ -1,67 +1,79 @@
 package ejercicio.EmpleYDep.profe;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
-import daw.com.Teclado;
+import com.opencsv.bean.CsvToBeanBuilder;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+
+
 
 public class AppConsultas {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		List <Depart> departamentos = cargarDatos();
+		List <Depart> departamentos = cargarDatosCSV();
+		departamentos.forEach(System.out::println);
 		
-
+		guardarDatosCSV(departamentos);
+/*	
 		// Query 1
-		System.out.println("\nEJERCICIO 1");
 		departamentos.stream().
 			flatMap(d->d.getEmpleados().stream()).
 			sorted((e1,e2)->e1.getNombre().compareTo(e2.getNombre())).
 			forEach(System.out::println);
-		
-
+*/		
+/*
 		// query 2
-		System.out.println("\nEJERCICIO 2");
-		Function <Emple, List<String>> funcion = e -> {ArrayList <String> r = new ArrayList<>(); 
+		Function <Emple, List<String>> funcion = 
+					e -> {ArrayList <String> r = new ArrayList<>(); 
 							r.add(e.getNombre());
 							r.add(e.getCargo());
 							return r;
-							};
+						};
 						
 		departamentos.stream().
 		flatMap(d->d.getEmpleados().stream()).
-		//sorted ((e1,e2) -> Float.compare(e1.getSalario(), e2.getSalario())).
-		sorted(Comparator.comparing(Emple::getSalario)/*.reversed()*/).
+		sorted ((e1,e2) -> Float.compare(e1.getSalario(), e2.getSalario())).
 		map (funcion).
 		forEach(System.out::println);
-	
-
+*/		
+/*
 		// query 3
-		System.out.println("\nEJERCICIO 3");
 		departamentos.stream().
-			flatMap(d-> d.getEmpleados().stream()).
-			forEach (e -> System.out.println( e.getNombre() +":"+ e.getSalario()+"->"+e.getComision()));
-
+			filter (d -> d.getCodigo().equals(Teclado.leerString("Departamento"))).
+			flatMap(d->d.getEmpleados().stream()).
+			forEach (e -> System.out.println(e.getSalario()+"->"+e.getComision()));
+*/	
 		
-
+/*
 		// query 4
-		System.out.println("\nEJERCICIO 4");
 		//Obtener el valor total a pagar que resulta de sumar a los empleados del departamento introducido
 		//por teclado, una bonificaci�n de 500000�, en orden alfab�tico del empleado.
 		departamentos.stream().
+			filter (d -> d.getCodigo().equals(Teclado.leerString("Departamento"))).
 			flatMap(d->d.getEmpleados().stream()).
 			sorted((e1,e2) -> e1.getNombre().compareTo(e2.getNombre())).
-			forEach(e -> System.out.println(e.getNombre()+"->" +e.getSalario() + "+500000 : "+ (e.getSalario()+ 500000)));
-		
+			forEach(e -> System.out.println(e.getNombre()+"->" + (e.getSalario()+ 500000)));
+*/		
 
 		// query 6
 		// modo 1
@@ -134,15 +146,17 @@ public class AppConsultas {
 */
 	// Query 7
 	// Hallar el salario más alto, el más bajo y la diferencia entre ellos.
+		/*
 		DoubleSummaryStatistics summary = departamentos.stream().
 		flatMap(d->d.getEmpleados().stream()).
 		mapToDouble(Emple::getSalario).summaryStatistics();
 	
 		System.out.println(summary.getMax());
 		System.out.println(summary.getMax());
-	
+	*/
 	// Query 13
 	//  Entregar el total a pagar por comisiones, y el número de empleados que las reciben.
+		/*
 		DoubleSummaryStatistics summary1 = departamentos.stream().
 				flatMap(d->d.getEmpleados().stream()).
 				filter (e -> e.getComision()>0).
@@ -150,9 +164,9 @@ public class AppConsultas {
 		
 		System.out.println(summary1.getCount());
 		System.out.println(summary1.getSum());
-		
+		*/
 	}
-	
+	/*
 	public static List<Depart> cargarDatos ()
 	{
 		final Optional<Emple> SINJEFE = Optional.empty();
@@ -211,5 +225,68 @@ public class AppConsultas {
 		
 		return departamentos;
 	}
+*/
+	public static List<Depart> cargarDatosCSV ()
+	{
+		List<Depart> departs = new ArrayList<>();
+		try {
+			List<Depart>beans = new CsvToBeanBuilder(new FileReader("departamentos.csv"))
+			        .withType(Depart.class)
+			        .build()
+			        .parse();
+			
+			// ajustar jefes
+			Consumer<Emple> ponerJefe = e -> e.setJefe(
+							beans.stream().
+								flatMap(d ->d.getEmpleados().stream()). // stream de empleados
+								map(Emple::getJefe). // stream de jefes de empleados
+								filter(Optional::isPresent).// filtrar los vacíos
+								map(Optional::get). // datos de jefes
+								distinct(). // eliminar repetidos
+								filter(j -> j.getDni().equals(e.getJefe().get().getDni())). // quedarnos con el jefe del empleado
+								findFirst() // consumir
+							);
+			
+			
+			beans.stream().
+					flatMap(d -> d.getEmpleados().stream()). // stream empleados
+					filter(e -> e.getJefe().isPresent()). // eliminar los que no tienen jefe
+					forEach(ponerJefe); // cambiar el jefe con sólo dni, por el valor real del jefe
+			departs = beans;
+			
+		} catch (IllegalStateException | FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("error leyendo fichero");
+		}
 
+		return departs;
+	}
+	
+	public static void guardarDatosCSV (List<Depart> deptos)
+	{
+		
+		 Writer writer;
+		try {
+			writer = new FileWriter("departamentos3.csv");
+		     StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).
+		    		 withSeparator(',').
+		    		 withApplyQuotesToAll(false).
+		    		 build();
+		     beanToCsv.write(deptos);
+		     writer.close();
+		     System.out.println("datos guardados");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (CsvDataTypeMismatchException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (CsvRequiredFieldEmptyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+	
 }
