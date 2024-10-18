@@ -5,8 +5,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.List;
 
-import org.apache.commons.beanutils.converters.AbstractConverter;
-
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
@@ -19,36 +17,38 @@ import com.opencsv.exceptions.CsvConstraintViolationException;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
+import ejercicio.EmpleYDep.profe.Emple;
 
-public class AlumnotoText extends AbstractCsvConverter {
+public class CsvToPersona extends AbstractCsvConverter{
 	@Override
 	public Object convertToRead(String value) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
-		// TODO Auto-generated method stub
+		
 		StringReader stringReader = new StringReader(value);
 
-		CSVParser icsvParser = new CSVParserBuilder()
-				.withSeparator('/') // campos del alumnos separados por:
-				.build();
-
-		// Crear reader a partir de String
-		CSVReader csvReader = new CSVReaderBuilder(stringReader)
-				.withCSVParser(icsvParser)
-				.build();	
+		CSVParser icsvParser = new CSVParserBuilder().
+							withSeparator('/'). // campos del Persona separados por :
+							build();
 		
-		return new CsvToBeanBuilder<Alumno>(csvReader)
-				.withType(Alumno.class)
-				.build()
-				.stream()
-				.findFirst().
-				orElseGet(Alumno::new);// devolver el empleado leído o vacío
+		// Crear reader a partir de String
+		CSVReader csvReader = new CSVReaderBuilder(stringReader).
+							withCSVParser(icsvParser).
+							build();
+		
+		 return new CsvToBeanBuilder<Persona>(csvReader)
+		            .withType(Persona.class)
+		            .build()
+		            .stream()
+		            .findFirst()
+		            .orElseGet(Persona::new);                   
 	}
 	
 	@Override
-	public String convertToWrite(Object value) throws CsvDataTypeMismatchException{
+	public String convertToWrite(Object value) throws CsvDataTypeMismatchException
+	{
 		Writer writer = new StringWriter();
 		try {
 		     StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).
-		    		 withSeparator(':'). // separador de campos
+		    		 withSeparator('/'). // separador de campos
 		    		 withApplyQuotesToAll(false).// no poner comillas
 		    		 withLineEnd("").//separador de elementos
 		    		 build();

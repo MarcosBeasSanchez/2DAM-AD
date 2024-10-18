@@ -23,7 +23,6 @@ public class LeerEmpleadosCSV {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String value = "00001A:Miguel:Mujer:1966-07-01:2000-01-20:34000.0:10000.0:profe:002";
-		
 		StringReader stringReader = new StringReader(value);
 		
 		//CSVReader csvReader = new CSVReaderBuilder(stringReader).build();

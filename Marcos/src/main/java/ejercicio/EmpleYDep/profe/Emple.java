@@ -42,6 +42,7 @@ public class Emple {
 	private String cargo;
 	@CsvCustomBindByPosition(position=8,converter = OptionalToText.class)
 	private Optional<Emple> jefe;
+	
 	/*
 	public Emple()
 	{

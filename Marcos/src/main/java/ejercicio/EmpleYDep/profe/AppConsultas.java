@@ -230,7 +230,7 @@ public class AppConsultas {
 	{
 		List<Depart> departs = new ArrayList<>();
 		try {
-			List<Depart>beans = new CsvToBeanBuilder(new FileReader("departamentos.csv"))
+			List<Depart>beans = new CsvToBeanBuilder<Depart>(new FileReader("departamentos.csv"))
 			        .withType(Depart.class)
 			        .build()
 			        .parse();

@@ -8,15 +8,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
-public class Contacto {
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Vehiculo {
 	@CsvBindByPosition(position=0)
-	private String empresa;
-	@CsvBindByPosition(position=1)
-	private String numero;
-	@CsvBindByPosition(position=2)
-	private String os;
-	
+	private String matricula;
+	@CsvBindByPosition(position=0)
+	private String modelo;
+	@CsvBindByPosition(position=0)
+	private String color;
+
 }
