@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "nombre": "e1",
+    "departamento": "d1",
+    "sueldo": 1200.0,
+    "fecha": {
+      "dia": 18,
+      "mes": 2,
+      "anio": 2000
+    }
+  },
+  {
+    "id": "2",
+    "nombre": "e2",
+    "departamento": "d2",
+    "sueldo": 700.0
+  }
+]

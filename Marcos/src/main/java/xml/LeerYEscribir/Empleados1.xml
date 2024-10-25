@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empresa>
+    <nombreEmpresa>villablanca</nombreEmpresa>
+    <empleados>
+        <empleado id="001">
+            <nombre>marcos</nombre>
+            <dept>informatica</dept>
+            <sueldo>500.0</sueldo>
+            <fechaNacimiento>2000-12-18</fechaNacimiento>
+        </empleado>
+        <empleado id="002">
+            <nombre>ana</nombre>
+            <dept>lengua</dept>
+            <sueldo>1000.0</sueldo>
+            <fechaNacimiento>1986-02-02</fechaNacimiento>
+        </empleado>
+        <empleado id="003">
+            <nombre>Mariano</nombre>
+            <dept>Matematicas</dept>
+            <sueldo>1500.0</sueldo>
+            <fechaNacimiento>1999-01-01</fechaNacimiento>
+        </empleado>
+    </empleados>
+</empresa>

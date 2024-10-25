@@ -9,7 +9,7 @@ import daw.com.Teclado;
 
 public class AlumnoConOptional {
 	private static final LocalDate FECHATOPE = LocalDate.now().minusYears(17);
-	
+
 	// atributos
 	private String nia;
 	private String nombre;
@@ -17,30 +17,28 @@ public class AlumnoConOptional {
 	private float nota;
 	private boolean repetidor;
 	private String curso;
-	
-	
+
 	// Constructores
-	public AlumnoConOptional ()
-	{
-		this ("", "",Optional.empty(), 1,false,"");
-	}
-	
-	public AlumnoConOptional (String nia)
-	{
-		this (nia, "", Optional.empty(), 1, false,"");
+	public AlumnoConOptional() {
+		this("", "", Optional.empty(), 1, false, "");
 	}
 
-	public AlumnoConOptional(String nia, String nombre, Optional<LocalDate> fecha, float nota, boolean repetidor,String curso) {
-		
+	public AlumnoConOptional(String nia) {
+		this(nia, "", Optional.empty(), 1, false, "");
+	}
+
+	public AlumnoConOptional(String nia, String nombre, Optional<LocalDate> fecha, float nota, boolean repetidor,
+			String curso) {
+
 		this.nia = nia;
 		this.nombre = nombre;
-		//this.fecha = fecha;
-		setFecha (fecha);
-		
-		//this.nota = nota;
-		setNota (nota);
+		// this.fecha = fecha;
+		setFecha(fecha);
+
+		// this.nota = nota;
+		setNota(nota);
 		this.repetidor = repetidor;
-		
+
 		this.curso = curso;
 	}
 
@@ -64,12 +62,11 @@ public class AlumnoConOptional {
 		return fecha;
 	}
 
-	public void setFecha(Optional<LocalDate> fecha) throws IllegalArgumentException 
-	{
-				
+	public void setFecha(Optional<LocalDate> fecha) throws IllegalArgumentException {
+
 		if (fecha.isPresent() && fecha.get().isAfter(FECHATOPE))
-			throw new IllegalArgumentException ("fecha incorrecta");
-		
+			throw new IllegalArgumentException("fecha incorrecta");
+
 		this.fecha = fecha;
 	}
 
@@ -82,7 +79,7 @@ public class AlumnoConOptional {
 			nota = 1;
 		else if (nota > 10)
 			nota = 10;
-			
+
 		this.nota = nota;
 	}
 
@@ -94,7 +91,6 @@ public class AlumnoConOptional {
 		this.repetidor = repetidor;
 	}
 
-	
 	public String getCurso() {
 		return curso;
 	}
@@ -103,15 +99,11 @@ public class AlumnoConOptional {
 		this.curso = curso;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Alumno [nia=" + nia + ", nombre=" + nombre + 
-				", fecha=" + (fecha.map(LocalDate::toString).orElse("SIN DATOS")) +
-				", nota=" + nota + 
-				", repetidor=" + repetidor + 
-				", curso=" + curso + "]";
+		return "Alumno [nia=" + nia + ", nombre=" + nombre + ", fecha="
+				+ (fecha.map(LocalDate::toString).orElse("SIN DATOS")) + ", nota=" + nota + ", repetidor=" + repetidor
+				+ ", curso=" + curso + "]";
 	}
 
 	@Override
@@ -138,89 +130,69 @@ public class AlumnoConOptional {
 			return false;
 		return true;
 	}
-	
-	public void leerDatos ()
-	{
-		leerClave ();
-		leerOtrosDatos ();
+
+	public void leerDatos() {
+		leerClave();
+		leerOtrosDatos();
 	}
-	
-	public void leerClave ()
-	{
+
+	public void leerClave() {
 		nia = Teclado.leerString("nia");
 	}
-	
-	public void leerOtrosDatos ()
-	{
-		
+
+	public void leerOtrosDatos() {
+
 		boolean fechaCorrecta;
 		nombre = Teclado.leerString("nombre");
-		
-		
-		do
-		{
+
+		do {
 			fechaCorrecta = true;
-			try
-			{
+			try {
 				fecha = Optional.of(LocalDate.parse(Teclado.leerString("fecha")));
-				setFecha (fecha);
-			}
-			catch (DateTimeParseException | IllegalArgumentException ex)
-			{
+				setFecha(fecha);
+			} catch (DateTimeParseException | IllegalArgumentException ex) {
 				Pantalla.escribirString("\nError en la fecha");
 				fechaCorrecta = false;
 			}
-		}while (!fechaCorrecta);
-		
-		
-		setNota (Teclado.leerFloat("nota"));
-		
+		} while (!fechaCorrecta);
+
+		setNota(Teclado.leerFloat("nota"));
+
 		repetidor = Teclado.leerString("Repetidor(S/N)").equalsIgnoreCase("S");
-		
+
 		curso = Teclado.leerString("curso");
-		
+
 	}
-	
-	public boolean estaAprobado ()
-	{
+
+	public boolean estaAprobado() {
 		return nota >= 5;
 	}
-	
-	public String toCSV ()
-	{
-		return nia + ";" + 
-				nombre + ";" 
-				+ (fecha.map(LocalDate::toString).orElse("SIN DATOS")) + ";" 
-				+ nota + ";"
-				+ repetidor + ";" 
-				+ curso + "\n";
-		
+
+	public String toCSV() {
+		return nia + ";" + nombre + ";" + (fecha.map(LocalDate::toString).orElse("SIN DATOS")) + ";" + nota + ";"
+				+ repetidor + ";" + curso + "\n";
+
 	}
-	
-	public static AlumnoConOptional fromCSV (String lineaCSV)
-	{
-		AlumnoConOptional alumno = new AlumnoConOptional ();
+
+	public static AlumnoConOptional fromCSV(String lineaCSV) {
+		AlumnoConOptional alumno = new AlumnoConOptional();
 		String[] campos = lineaCSV.split(";");
 		alumno.nia = campos[0];
 		alumno.nombre = campos[1];
-		
-		try
-		{
-			alumno.setFecha (Optional.of(LocalDate.parse(campos[2])));
-		}
-		catch (DateTimeParseException | IllegalArgumentException ex)
-		{
+
+		try {
+			alumno.setFecha(Optional.of(LocalDate.parse(campos[2])));
+		} catch (DateTimeParseException | IllegalArgumentException ex) {
 			alumno.setFecha(Optional.empty());
 		}
-		
-			
+
 		alumno.setNota(Float.parseFloat(campos[3]));
-		
+
 		alumno.repetidor = Boolean.parseBoolean(campos[4]);
-		
+
 		alumno.setCurso(campos[5]);
-		
+
 		return alumno;
 	}
-	
+
 }
