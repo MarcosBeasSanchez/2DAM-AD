@@ -17,7 +17,6 @@ public class EscribirJSONconFecha {
 
 		empresa.setNombre("villablanca");
 		empresa.setFecha(LocalDate.now().minusDays(30)); // un mes antes de hoy
-
 		Empleado e = new Empleado("001", "miguel", "infor", 999);
 		empresa.getEmpleados().add(e);
 
@@ -35,7 +34,7 @@ public class EscribirJSONconFecha {
 		PrintWriter ficheroEmpresa = new PrintWriter(new File("empresaConFecha.json"));
 		gson.toJson(empresa, ficheroEmpresa);
 		ficheroEmpresa.close();
-
+		
 	}
 
 }
