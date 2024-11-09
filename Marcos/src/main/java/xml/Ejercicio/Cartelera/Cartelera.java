@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
 //Elemento raiz
-@XmlRootElement(name = "cartelera")
+@XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cartelera {
 	

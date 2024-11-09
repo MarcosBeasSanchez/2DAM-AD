@@ -7,6 +7,9 @@ import java.time.LocalTime;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import com.google.gson.annotations.JsonAdapter;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,8 +26,9 @@ import lombok.NoArgsConstructor;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 public class Dato {
-	// quizas hay que hacer un LocalTimeDateAdapter
+	@XmlJavaTypeAdapter(LocalDateTimeAdapterSevilla.class)
 	@XmlAttribute
+	@JsonAdapter(JsonLocalDateTimeAdapterSevilla.class)
 	private LocalDateTime fecha;
 
 	private Float temperatura;

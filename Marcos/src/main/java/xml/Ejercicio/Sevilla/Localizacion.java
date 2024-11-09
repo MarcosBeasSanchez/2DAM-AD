@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,8 +26,8 @@ import lombok.NoArgsConstructor;
 public class Localizacion {
 	@XmlAttribute
 	private String id;
+	
 	private String ciudad;
-	// alomejor toca parsear
 	private Float latitud;
 	private Float longitud;
 

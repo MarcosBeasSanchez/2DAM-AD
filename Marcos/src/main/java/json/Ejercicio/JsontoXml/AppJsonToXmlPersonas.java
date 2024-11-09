@@ -26,9 +26,9 @@ public class AppJsonToXmlPersonas {
 		Personas personas;
 		Gson gsonLector = new Gson(); //leector
 		Reader reader = new FileReader("personas.json"); //lector de json
-		
 		personas = gsonLector.fromJson(reader, Personas.class); //lee el archivo
 		
+		//Escribir Json por la terminal de manera bonita
 		Gson gsonEscribidor= new GsonBuilder().setPrettyPrinting().create(); //escribidor
 		String json = gsonEscribidor.toJson(personas);
 		System.out.println(json);
@@ -49,7 +49,6 @@ public class AppJsonToXmlPersonas {
 			ms.marshal(personas, new FileWriter("personas.xml")); //exporta el xml
 			
 		} catch (JAXBException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

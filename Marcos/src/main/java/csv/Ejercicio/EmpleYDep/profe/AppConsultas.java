@@ -268,20 +268,14 @@ public class AppConsultas {
 		 Writer writer;
 		try {
 			writer = new FileWriter("departamentos3.csv");
-		     StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).
+		     StatefulBeanToCsv<Depart> beanToCsv = new StatefulBeanToCsvBuilder<Depart>(writer).
 		    		 withSeparator(',').
 		    		 withApplyQuotesToAll(false).
 		    		 build();
 		     beanToCsv.write(deptos);
 		     writer.close();
 		     System.out.println("datos guardados");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (CsvDataTypeMismatchException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (CsvRequiredFieldEmptyException e) {
+		} catch (IOException|CsvDataTypeMismatchException|CsvRequiredFieldEmptyException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

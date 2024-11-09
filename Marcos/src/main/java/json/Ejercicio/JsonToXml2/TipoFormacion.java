@@ -16,7 +16,8 @@ public enum TipoFormacion {
 	};
 
 	public static TipoFormacion crearFormacion(String v) {
-		return Arrays.stream(TipoFormacion.values()).filter(g -> g.toString().equalsIgnoreCase(v))
+		return Arrays.stream(TipoFormacion.values())
+				.filter(g -> g.toString().equalsIgnoreCase(v))
 				.findFirst()
 				.orElse(PRESENCIAL);
 		

@@ -51,7 +51,6 @@ public class AppCartelera {
 			JAXBContext context = JAXBContext.newInstance(Cartelera.class);
 			Marshaller ms = context.createMarshaller();
 
-									
 			ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			ms.marshal(cartelera, System.out);
 			

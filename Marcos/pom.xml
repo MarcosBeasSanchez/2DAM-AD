@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	
 	<dependencies>
 
 		<!-- Añadir libreria de Teclado y Pantalla 
@@ -33,7 +33,6 @@
 			<artifactId>opencsv</artifactId>
 			<version>5.9</version>
 		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
 		<dependency>

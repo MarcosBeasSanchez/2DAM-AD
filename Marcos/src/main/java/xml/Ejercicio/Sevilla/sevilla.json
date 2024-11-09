@@ -1,0 +1,314 @@
+{
+  "localizacion": [
+    {
+      "id": "41091",
+      "ciudad": "Sevilla",
+      "latitud": 37.42,
+      "longitud": -5.89
+    }
+  ],
+  "condicionesActuales": [
+    {
+      "ultimaObservacion": "09:30",
+      "temperatura": 6,
+      "sensacionTermica": 3,
+      "condiciones": "Parcialmente nublado",
+      "icono": "24_d",
+      "viento": {
+        "direccion": "Sudoeste",
+        "valor": 15
+      },
+      "precipitacion": 0.0,
+      "presion": "1006",
+      "humedad": "87",
+      "visibilidad": 10.0,
+      "indice_ultravioleta": 2,
+      "puntoRocio": 4
+    }
+  ],
+  "pronosticoDias": [
+    {
+      "maxima": 0,
+      "minima": 0,
+      "humedadMax": 0,
+      "humedadMin": 0
+    }
+  ],
+  "pronosticoHoras": [
+    {
+      "temperatura": 0,
+      "sensacionTermica": 0,
+      "probabilidadPrecipitacion": 0,
+      "humedad": 0
+    }
+  ],
+  "datosRegistrados": {
+    "actualizacion": "2016-02-27T08:42",
+    "dato": [
+      {
+        "fecha": "2016-02-27T08:00",
+        "temperatura": 6.6,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 18
+        },
+        "precipitacion": 0.0,
+        "presion": 1002.4,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-27T07:00",
+        "temperatura": 6.5,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 15
+        },
+        "precipitacion": 0.0,
+        "presion": 1002.1,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-27T06:00",
+        "temperatura": 6.5,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 18
+        },
+        "precipitacion": 0.0,
+        "presion": 1001.6,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-27T05:00",
+        "temperatura": 7.2,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 17
+        },
+        "precipitacion": 0.0,
+        "presion": 1001.4,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-27T04:00",
+        "temperatura": 7.1,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 14
+        },
+        "precipitacion": 0.0,
+        "presion": 1001.7,
+        "humedad": 84
+      },
+      {
+        "fecha": "2016-02-27T03:00",
+        "temperatura": 7.3,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 22
+        },
+        "precipitacion": 0.0,
+        "presion": 1002.3,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-27T02:00",
+        "temperatura": 6.9,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 17
+        },
+        "precipitacion": 0.0,
+        "presion": 1002.5,
+        "humedad": 84
+      },
+      {
+        "fecha": "2016-02-27T01:00",
+        "temperatura": 7.3,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 15
+        },
+        "precipitacion": 0.0,
+        "presion": 1003.3,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-27T00:00",
+        "temperatura": 8.0,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 21
+        },
+        "precipitacion": 0.0,
+        "presion": 1003.9,
+        "humedad": 77
+      },
+      {
+        "fecha": "2016-02-26T23:00",
+        "temperatura": 8.4,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 24
+        },
+        "precipitacion": 0.0,
+        "presion": 1004.1,
+        "humedad": 73
+      },
+      {
+        "fecha": "2016-02-26T22:00",
+        "temperatura": 8.9,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 21
+        },
+        "precipitacion": 0.0,
+        "presion": 1004.1,
+        "humedad": 77
+      },
+      {
+        "fecha": "2016-02-26T21:00",
+        "temperatura": 9.9,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 24
+        },
+        "precipitacion": 0.0,
+        "presion": 1004.1,
+        "humedad": 78
+      },
+      {
+        "fecha": "2016-02-26T20:00",
+        "temperatura": 10.3,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 17
+        },
+        "precipitacion": 0.0,
+        "presion": 1004.0,
+        "humedad": 80
+      },
+      {
+        "fecha": "2016-02-26T19:00",
+        "temperatura": 10.8,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 22
+        },
+        "precipitacion": 0.0,
+        "presion": 1003.2,
+        "humedad": 83
+      },
+      {
+        "fecha": "2016-02-26T18:00",
+        "temperatura": 10.8,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 21
+        },
+        "precipitacion": 1.1,
+        "presion": 1003.2,
+        "humedad": 87
+      },
+      {
+        "fecha": "2016-02-26T17:00",
+        "temperatura": 10.8,
+        "viento": {
+          "direccion": "Oeste",
+          "valor": 32
+        },
+        "precipitacion": 1.0,
+        "presion": 1004.4,
+        "humedad": 88
+      },
+      {
+        "fecha": "2016-02-26T16:00",
+        "temperatura": 12.7,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 31
+        },
+        "precipitacion": 4.2,
+        "presion": 1004.7,
+        "humedad": 93
+      },
+      {
+        "fecha": "2016-02-26T15:00",
+        "temperatura": 13.7,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 37
+        },
+        "precipitacion": 0.1,
+        "presion": 1006.2,
+        "humedad": 85
+      },
+      {
+        "fecha": "2016-02-26T14:00",
+        "temperatura": 12.0,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 23
+        },
+        "precipitacion": 2.8,
+        "presion": 1008.3,
+        "humedad": 94
+      },
+      {
+        "fecha": "2016-02-26T13:00",
+        "temperatura": 13.5,
+        "viento": {
+          "direccion": "Sur",
+          "valor": 15
+        },
+        "precipitacion": 0.0,
+        "presion": 1010.2,
+        "humedad": 82
+      },
+      {
+        "fecha": "2016-02-26T12:00",
+        "temperatura": 12.2,
+        "viento": {
+          "direccion": "Sur",
+          "valor": 14
+        },
+        "precipitacion": 0.0,
+        "presion": 1012.0,
+        "humedad": 81
+      },
+      {
+        "fecha": "2016-02-26T11:00",
+        "temperatura": 10.5,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 13
+        },
+        "precipitacion": 0.0,
+        "presion": 1013.5,
+        "humedad": 89
+      },
+      {
+        "fecha": "2016-02-26T10:00",
+        "temperatura": 9.7,
+        "viento": {
+          "direccion": "Sur",
+          "valor": 9
+        },
+        "precipitacion": 0.0,
+        "presion": 1014.3,
+        "humedad": 91
+      },
+      {
+        "fecha": "2016-02-26T09:00",
+        "temperatura": 8.5,
+        "viento": {
+          "direccion": "Sudoeste",
+          "valor": 9
+        },
+        "precipitacion": 0.0,
+        "presion": 1014.3,
+        "humedad": 94
+      }
+    ]
+  }
+}

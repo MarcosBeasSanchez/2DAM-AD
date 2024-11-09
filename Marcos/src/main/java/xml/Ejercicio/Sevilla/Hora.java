@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import com.google.gson.annotations.JsonAdapter;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,10 +29,12 @@ public class Hora {
 	
 	@XmlAttribute
 	@XmlJavaTypeAdapter(LocalTimeAdapter.class)
+	@JsonAdapter(LocalTimeAdapterSevillaJson.class)
 	private LocalTime id;
 	
 	@XmlAttribute
 	@XmlJavaTypeAdapter(LocalDateAdapterSevilla.class)
+	@JsonAdapter(LocalDateSevillaJson.class)
 	private LocalDate fecha;
 	
 	private int temperatura;

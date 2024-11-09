@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import com.google.gson.annotations.JsonAdapter;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,7 +31,8 @@ public class Dia {
 
 	@XmlAttribute
 	@XmlJavaTypeAdapter(LocalDateAdapterSevilla.class)
-	private LocalDate fecha;
+	@JsonAdapter(LocalDateSevillaJson.class)
+	private LocalDate fecha; 
 
 	private int maxima;
 	private int minima;
@@ -37,15 +40,17 @@ public class Dia {
 	private String icono;
 	private Viento viento;
 	@XmlElement(name = "probabilidad_precipitacion")
-	private int probabilidadPrecipitacion;
+	private Integer probabilidadPrecipitacion;
 	private Float precipitacion;
 	@XmlElement(name = "humedad_max")
 	private int humedadMax;
 	@XmlElement(name = "humedad_min")
 	private int humedadMin;
 	@XmlJavaTypeAdapter(LocalTimeAdapter.class)
+	@JsonAdapter(LocalTimeAdapterSevillaJson.class)
 	private LocalTime amanecer;
 	@XmlJavaTypeAdapter(LocalTimeAdapter.class)
+	@JsonAdapter(LocalTimeAdapterSevillaJson.class)
 	private LocalTime ocaso;
 
 }
