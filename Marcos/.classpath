@@ -37,6 +37,6 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/2DAM/AD/daw.jar"/>
+	<classpathentry kind="lib" path="/media/usertar/SSDBEAS/2DAM/AD/daw.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

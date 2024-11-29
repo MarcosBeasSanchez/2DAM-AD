@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/media/usertar/SSDBEAS/2DAM/AD"/>
+			<item value="/media/usertar/SSDBEAS/2DAM/AD/Marcos"/>
 			<item value="/media/usertar/USB MARCOS/2DAM/AD/Marcos/src/main/java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,10 +28,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="Hibernate.PruebaHibernate"/>
 		</list>
 		<list key="groupId">
+			<item value="Hibernate"/>
 		</list>
 		<list key="artifactId">
+			<item value="PruebaHibernate"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

@@ -23,7 +23,7 @@ public interface Main {
 			//Lectura
 			Gson gsonlector = new Gson();
 			TypeToken<List<Pais>> paisLista = new TypeToken<List<Pais>>(){}; // hay que usarlo porque empieza siendo []
-			Reader reader = new FileReader("./paises.json"); //Leer este archivo
+			Reader reader = new FileReader("paises.json"); //Leer este archivo
 			paises = gsonlector.fromJson(reader,paisLista); // almacenar 
 			
 			//Escritura

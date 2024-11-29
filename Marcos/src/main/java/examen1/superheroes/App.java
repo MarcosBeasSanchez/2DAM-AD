@@ -61,7 +61,7 @@ public class App
 			TypeToken<List<SuperHeroe>>lista = new TypeToken<List<SuperHeroe>>() {};
 			
 			GsonBuilder creadorGson = new GsonBuilder()
-					//.registerTypeAdapter(Squad.class, new SquadAdapter())
+					
 					.registerTypeAdapter(SecretBase.class, new SecretBaseJson())
 					.registerTypeAdapter(Boolean.class, new BooleanToJson())
 					;
