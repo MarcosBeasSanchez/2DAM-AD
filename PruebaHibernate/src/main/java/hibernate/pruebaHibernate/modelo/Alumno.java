@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
@@ -20,6 +21,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.ManyToAny;
+
+import hibernate.muchosauno.modelo.Grupo;
+import hibernate.muchosauno.modelo.Grupo.GrupoBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,10 +39,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 //Anotaciones JPA
-@Entity
-@Table(name="Alumnos")
-
+@Entity(name="alumnoejemplo")
+@Table(name="alumno")
 public class Alumno implements Serializable{
+
+	public Alumno(String string, LocalDate now, Grupo g1) {
+		// TODO Auto-generated constructor stub
+	}
 
 	@EqualsAndHashCode.Include
 	

@@ -8,15 +8,12 @@ INDEX VERSION 1.134+F:\2DAM\AD\.metadata\.plugins\org.eclipse.jdt.core
 270846520.index
 2157733655.index
 4070041273.index
-1818058489.index
 2294292731.index
 896142797.index
-3681034959.index
 1621573211.index
 3460518258.index
 173529432.index
 3534340685.index
-2925802780.index
 3687796449.index
 1610301611.index
 1865797976.index

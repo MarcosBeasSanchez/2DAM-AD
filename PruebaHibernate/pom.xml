@@ -7,14 +7,14 @@
 	<artifactId>PruebaHibernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
+	
 	<name>PruebaHibernate</name>
 	<url>http://maven.apache.org</url>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -22,14 +22,14 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.22</version>
 			<scope>provided</scope>
 		</dependency>
-
+	
 		<!-- H2 Database -->
 		<!--   https://mvnrepository.com/artifact/com.h2database/h2   -->
 		<dependency>
