@@ -14,23 +14,26 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@Entity
+
+
 @SuperBuilder
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Entity
 public class AsistenciaMedica {
 	@Id
+	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int idAsistenciaMedica;
-	
-	String breveDescripcion;
-	String lugar;
-	String explicacion;
-	String tipoAsistencia;
-	LocalDateTime fechaYHora;
-	int importe;
+	private int idAsistenciaMedica;
+	private String breveDescripcion;
+	private String lugar;
+	private String explicacion;
+	private String tipoAsistencia;
+	private LocalDateTime fechaYHora;
+	private float importe;
 	
 
 }

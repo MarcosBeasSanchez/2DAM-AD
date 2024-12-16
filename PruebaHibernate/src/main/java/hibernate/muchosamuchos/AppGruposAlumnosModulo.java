@@ -146,7 +146,7 @@ public class AppGruposAlumnosModulo {
 		*/
 
 		
-		String query = "DELETE FROM Alumno a WHERE a IN "
+		String query = "DELETE FROM Alumno a WHERE a IN"
 				+ "(SELECT al FROM Grupo g JOIN g.alumnos al WHERE g.nombre = ?1)";
 		
 		alumnoDAO.executeQuery(query, grupo);

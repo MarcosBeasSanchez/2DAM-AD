@@ -1,7 +1,6 @@
 package hibernate.Seguromedico;
 
-import java.time.LocalDateTime;
-
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 import lombok.AllArgsConstructor;
@@ -10,14 +9,16 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@Entity
+//@Entity
 @SuperBuilder
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
 
+@Embeddable
 public class Coberturas {
+	@EqualsAndHashCode.Include
 	boolean oftalmologia;
 	boolean dental;
 	boolean fecundacionInVitro;

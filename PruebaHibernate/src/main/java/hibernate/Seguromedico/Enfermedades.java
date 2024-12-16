@@ -1,5 +1,7 @@
 package hibernate.Seguromedico;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 import lombok.AllArgsConstructor;
@@ -8,17 +10,20 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@Entity
+//@Entity
 @SuperBuilder
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Embeddable
 public class Enfermedades {
-	boolean corazon;
-	boolean estomacal;
-	boolean rinyones;
-	boolean alergia;
+	private boolean corazon;
+	private boolean estomacal;
+	private boolean rinyones;
+	private boolean alergia;
+	@Column(length = 30)
 	String nombreAlergia;
 
 }
