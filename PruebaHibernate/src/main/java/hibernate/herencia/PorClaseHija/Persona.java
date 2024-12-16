@@ -1,4 +1,4 @@
-package hibernate.herenica.PorClaseHija;
+package hibernate.herencia.PorClaseHija;
 
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
-package hibernate.herenica.PorClaseHija;
+package hibernate.herencia.PorClaseHija;
 
-import javax.persistence.DiscriminatorValue;
+
 import javax.persistence.Entity;
 
 
@@ -20,10 +20,10 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true)
 
 @Entity
-public class Normal extends Persona
+public class Tecnologo extends Persona
 {
 
-    private String ocupacion;
+    private int aniosDeEstudios;
 
     
 }

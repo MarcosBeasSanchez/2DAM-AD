@@ -1,7 +1,8 @@
-package hibernate.herenica.PorClaseHija;
+package hibernate.herencia.PorClaseHija;
 
-
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+
 
 
 import lombok.AllArgsConstructor;
@@ -19,12 +20,10 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true)
 
 @Entity
-public class Programador extends Tecnologo
+public class Normal extends Persona
 {
 
-    private String lenguajeFavorito;
-    private int aniosDeExperiencia;
+    private String ocupacion;
 
-      
+    
 }
-

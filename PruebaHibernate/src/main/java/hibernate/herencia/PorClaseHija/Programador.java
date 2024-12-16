@@ -1,4 +1,4 @@
-package hibernate.herenica.PorClaseHija;
+package hibernate.herencia.PorClaseHija;
 
 
 import javax.persistence.Entity;
@@ -19,10 +19,12 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true)
 
 @Entity
-public class Tester extends Tecnologo
+public class Programador extends Tecnologo
 {
 
-    private String herramientaDeTesteo;
+    private String lenguajeFavorito;
+    private int aniosDeExperiencia;
 
-     
+      
 }
+
